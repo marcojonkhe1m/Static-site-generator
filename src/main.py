@@ -1,9 +1,9 @@
 from textnode import TextNode, TextType
+from copy_static import copy_static
 
 
 def main():
-    textnode = TextNode("this is some anchor text", TextType.LINK, "https://www.boot.dev")
-    print(textnode)
+    copy_static()
 
 if __name__ == "__main__":
     main()
