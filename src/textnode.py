@@ -32,7 +32,7 @@ def text_node_to_html(textnode: TextNode):
         TextType.ITALIC: LeafNode("i", textnode.text),
         TextType.CODE: LeafNode("code", textnode.text),
         TextType.LINK: LeafNode("a", textnode.text, {"href": textnode.url}),
-        TextType.IMAGE: LeafNode("img", None, {"src": textnode.url, "alt": textnode.text}),
+        TextType.IMAGE: LeafNode("img", "", {"src": textnode.url, "alt": textnode.text}),
     }
     if isinstance(textnode.text_type,TextType):
         return text_to_html_dict[textnode.text_type]

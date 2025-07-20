@@ -1,20 +1,12 @@
 import os
 import shutil
 
-def copy_static():
-    SOURCE_DIR = "static"
-    DESTINATION_DIR = "public"
-
-    if len(os.listdir(SOURCE_DIR)) == 0:
+def copy_static(source, destination):
+    if len(os.listdir(source)) == 0:
            raise ValueError("no files in source directory")
     
-    # empty public directory
-    if os.path.exists(DESTINATION_DIR):
-        print(f"deleting directory: {DESTINATION_DIR}")
-        shutil.rmtree(DESTINATION_DIR)
-    os.mkdir(DESTINATION_DIR)
 
-    create_filepath_list_to_copy(SOURCE_DIR, DESTINATION_DIR)
+    create_filepath_list_to_copy(source, destination)
 
 def create_filepath_list_to_copy(source, destination):
     dir_content = os.listdir(source)
