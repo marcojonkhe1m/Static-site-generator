@@ -4,7 +4,8 @@ import os
 from copy_static import copy_static
 from generate_page import generate_page_recursive
 
-source_path = "static"
+static_path = "static"
+content_path = "content"
 destination_path = "docs"
 template = "template.html"
 
@@ -18,9 +19,9 @@ def main():
         shutil.rmtree(destination_path)
     os.mkdir(destination_path)
 
-    copy_static(source_path, destination_path)
+    copy_static(static_path, destination_path)
     
-    generate_page_recursive(source_path,template, destination_path, basepath)
+    generate_page_recursive(content_path,template, destination_path, basepath)
 
 if __name__ == "__main__":
     main()

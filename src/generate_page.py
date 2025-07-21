@@ -9,10 +9,14 @@ def generate_page_recursive(dir_path_content, template_path, dest_dir_path, base
         if not os.path.isfile(new_content_path):
             if not os.path.exists(new_dest_path):
                 os.mkdir(new_dest_path)
-            generate_page_recursive(new_content_path, template_path, new_dest_path, basepath)
+            generate_page_recursive(
+                    new_content_path, template_path, new_dest_path, basepath
+                    )
         if new_content_path.endswith(".md"):
             new_dest_path = new_dest_path.replace(".md", ".html")
-            generate_page(new_content_path, template_path, new_dest_path, basepath)
+            generate_page(
+                    new_content_path, template_path, new_dest_path, basepath
+                    )
 
 
 def generate_page(from_path, template_path, dest_path, basepath):
