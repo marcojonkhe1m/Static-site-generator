@@ -13,7 +13,7 @@ def main():
     if len(sys.argv) == 1:
         basepath = "/"
     else:
-        basepath = sys.argv[1]
+        basepath = sys.argv[1] + "/"
 
     if os.path.exists(destination_path):
         shutil.rmtree(destination_path)
