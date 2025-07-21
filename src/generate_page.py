@@ -34,6 +34,7 @@ def generate_page(from_path, template_path, dest_path, basepath):
     title = extract_title(markdown)
 
     static_site = template.replace("{{ Title }}", title).replace("{{ Content }}", html_string)
+
     static_site = static_site.replace('href="/', f'href="{basepath}').replace('src="/', f'src="{basepath}')
 
     directories = dest_path.split("/")
